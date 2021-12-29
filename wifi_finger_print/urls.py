@@ -19,5 +19,7 @@ from back_end import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get-rss-list/',api.getRssList)
+    path('get-rss-list/',api.getRssList),
+    path('get-menu-list/',api.getMenuList),
+    path('orientation/',api.orientation)
 ]

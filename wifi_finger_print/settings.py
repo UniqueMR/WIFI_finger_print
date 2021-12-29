@@ -81,10 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wifi_finger_print',
-        'USER': 'your user',
-        'PASSWORD': 'your password',
-        'HOST': 'your host',
-        'PORT': 'your port'
+        'USER': 'root',
+        'PASSWORD': '644027',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
     }
 }
 

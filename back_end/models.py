@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import CharField
 
 # Create your models here.
 class Rss(models.Model):
@@ -36,3 +37,8 @@ class Rss(models.Model):
     ylabel = models.FloatField()
     def __int__(self):
         return self.id 
+
+class Blocks(models.Model):
+    text = models.CharField(max_length=50)
+    def __str__(self):
+        return self.text
