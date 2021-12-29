@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'wifi_finger_print.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wifi_finger_print',
-        'USER': 'root',
-        'PASSWORD': '644027',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'ENGINE': 'YOUR DATABASE ENGINE',
+        'NAME': 'YOUR DATABASE NAME',
+        'USER': 'YOUR USER NAME',
+        'PASSWORD': 'YOU PASSWORD',
+        'HOST': 'YOUR SERVER HOST',
+        'PORT': 'YOUR DATABASE PORT'
     }
 }
 
