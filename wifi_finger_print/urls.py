@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('get-rss-list/',api.getRssList),
     path('get-menu-list/',api.getMenuList),
-    path('orientation/',api.orientation)
+    path('orientation/',api.orientation),
+    path('get-test-list/',api.getTestList),
+    path('update-test-list/',api.updateTestList)
 ]

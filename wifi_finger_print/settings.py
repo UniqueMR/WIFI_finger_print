@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'wifi_finger_print.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'YOUR DATABASE ENGINE',
+        'ENGINE': 'YOUR DATABASE',
         'NAME': 'YOUR DATABASE NAME',
-        'USER': 'YOUR USER NAME',
-        'PASSWORD': 'YOU PASSWORD',
-        'HOST': 'YOUR SERVER HOST',
-        'PORT': 'YOUR DATABASE PORT'
+        'USER': 'YOUR USER',
+        'PASSWORD': 'YOUR PASSWORD',
+        'HOST': 'YOUR HOST',
+        'PORT': 'YOUR PORT'
     }
 }
 
