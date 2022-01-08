@@ -11,6 +11,7 @@
         <label v-if="item != '操作'">{{item}}</label>
         <input v-if="item != '操作'" type="text" class="form-control" v-model="updateData[index]"/>
       </div>
+      <button v-if="controlNow == 'add'" @click="add()">Add</button>
     </div>
     <div class="view">
       <table class="table">
@@ -24,7 +25,7 @@
           <tr v-for="data in tableContent" :key="data.id">
             <td v-for="item in data" :key="item.id">{{item}}</td>
             <button @click="update(data.id)">update</button>
-            <button>delete</button>
+            <button @click="deleteData(data.id)">delete</button>
           </tr>
         </tbody>
       </table>
@@ -80,7 +81,58 @@ export default({
       })
     },
     controlSwitch(control){
-      this.controlNow=control
+      if(this.controlNow == control){
+        this.controlNow = 'default'
+      }
+      else{
+        this.controlNow = control
+      }
+    },
+    deleteData(id){
+      var controlNow = this.controlNow
+      if(controlNow != 'delete')
+        alert('Please confirm before you delete!')
+      axios({
+        url:"http://127.0.0.1:9000/delete-test-list/",
+        data:
+          Qs.stringify({
+            id,
+            controlNow          
+          }),
+        method:'delete',
+        headers:{
+            "Content-Type":"application/x-www-form-urlencoded"
+        },
+        type:"json"
+      }).then((res)=>{
+        console.log(res),
+        this.getTestTable()
+      })
+    },
+    add(){
+      var updateData = this.updateData
+      for(var i=0; i < 33; i++){
+        if(updateData[i] == ''){
+          alert('Blank features exists!');
+          return;
+        }
+      }
+      axios({
+        url:"http://127.0.0.1:9000/add-test-list/",
+        data:
+          Qs.stringify({
+            updateData
+          }),
+        method:'post',
+        headers:{
+            "Content-Type":"application/x-www-form-urlencoded"
+        },
+        type:"json"
+      }).then((res)=>{
+        console.log(res),
+        this.getTestTable()
+        this.controlSwitch('default')
+      })
     }
   }
 })

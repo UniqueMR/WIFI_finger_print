@@ -4,8 +4,8 @@
         <span>RSS指纹:</span>
         <input v-model="rss" type="text" placeholder="输入RSS"/>
     </div>
-    <div class="positon">{{location}}</div>
-    <div class="positon1">{{testLocation}}</div>
+    <div class="positon">Prediction: {{location}}</div>
+    <div class="positon1">Real: {{testLocation}}</div>
     <button @click="submit">上传RSS</button> 
     <div class="view" style="position: relative">
         <img src="../assets/img/DJ室内布局图.svg"/>

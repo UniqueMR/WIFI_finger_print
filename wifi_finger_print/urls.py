@@ -23,5 +23,7 @@ urlpatterns = [
     path('get-menu-list/',api.getMenuList),
     path('orientation/',api.orientation),
     path('get-test-list/',api.getTestList),
-    path('update-test-list/',api.updateTestList)
+    path('update-test-list/',api.updateTestList),
+    path('delete-test-list/',api.deleteTestList),
+    path('add-test-list/',api.addTestList)
 ]
